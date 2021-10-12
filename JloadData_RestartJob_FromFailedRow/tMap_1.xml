@@ -1,0 +1,57 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<externalNode i18n.job.component.parameters="Component Parameters:" i18n.job.properties="Properties" i18n.job.values="Values" i18n.mapper.table.for="Mapper table for " i18n.mapper.table.properties="Mapper table Properties" i18n.job.name="Name" i18n.tmap.matching.mode="Matching-mode" i18n.mapper.table.isminimized="isMinimized" i18n.tmap.isreject="isReject" i18n.tmap.isrejectinnnerjoin="isRejectInnerJoin" i18n.tmap.isinnerjoin="isInnerJoin" i18n.tmap.expressionfilter="expressionFilter" i18n.mapper.table.metadata.entries="Metadata Table Entries" i18n.job.type="Type" i18n.mapper.table.expression="Expression" i18n.tmap.isnullable="isNullable" i18n.tmap.constraint.entries="Constraint Table Entries" name="tMap_1" preview="pictures/_qqFb0BahEeyK0vpJRvppEw-tMap_1-PREVIEW.bmp">
+  <parameters>
+    <column name="tStatCatcher Statistics">false</column>
+    <column name="Mapping links display as:">AUTO</column>
+    <column name="Temp data directory path:"></column>
+    <column name="Max buffer size (nb of rows):">2000000</column>
+    <column name="Ignore trailing zeros for BigDecimal">true</column>
+    <column name="Show Information">false</column>
+    <column name="Comment"><![CDATA[]]></column>
+    <column name="Use an existing validation rule">false</column>
+  </parameters>
+  <mapperTable type="input">
+    <table name="row1" matching-mode="UNIQUE_MATCH" lookup-mode="LOAD_ONCE" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false" activateColumnNameFilter="false" columnNameFilter="null">
+      <metadataTableEntries>
+        <entry name="CUST_ID" type="Integer" expression="" isNullable="true"/>
+        <entry name="CUST_NAME" type="String" expression="" isNullable="true"/>
+        <entry name="CUST_CITY" type="String" expression="" isNullable="true"/>
+        <entry name="SALES_QTY" type="Integer" expression="" isNullable="true"/>
+        <entry name="PRICE" type="Integer" expression="" isNullable="true"/>
+      </metadataTableEntries>
+    </table>
+    <table name="row2" matching-mode="UNIQUE_MATCH" lookup-mode="LOAD_ONCE" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="true" activateColumnNameFilter="false" columnNameFilter="null">
+      <metadataTableEntries>
+        <entry name="PRODUCT_ID" type="Integer" expression="" isNullable="true"/>
+        <entry name="PRODUCT_NAME" type="String" expression="" isNullable="true"/>
+        <entry name="PRODUCT_TYPE" type="String" expression="" isNullable="true"/>
+        <entry name="PRODUCT_PRICE" type="Integer" expression="row1.PRICE " isNullable="true"/>
+        <entry name="PRODUCT_KEY" type="Integer" expression="" isNullable="true"/>
+      </metadataTableEntries>
+    </table>
+  </mapperTable>
+  <mapperTable type="output">
+    <table name="Output" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="true" activateColumnNameFilter="false" columnNameFilter="null">
+      <metadataTableEntries>
+        <entry name="CUST_ID" type="Integer" expression="row1.CUST_ID " isNullable="true"/>
+        <entry name="CUST_NAME" type="String" expression="row1.CUST_NAME " isNullable="true"/>
+        <entry name="CUST_CITY" type="String" expression="row1.CUST_CITY " isNullable="true"/>
+        <entry name="SALES_QTY" type="Integer" expression="row1.SALES_QTY " isNullable="true"/>
+        <entry name="PRODUCT_ID" type="Integer" expression="row2.PRODUCT_ID " isNullable="true"/>
+        <entry name="PRODUCT_NAME" type="String" expression="row2.PRODUCT_NAME " isNullable="true"/>
+        <entry name="PRODUCT_TYPE" type="String" expression="row2.PRODUCT_TYPE " isNullable="true"/>
+        <entry name="PRODUCT_PRICE" type="Integer" expression="row2.PRODUCT_PRICE " isNullable="true"/>
+        <entry name="PRODUCT_KEY" type="Integer" expression="row2.PRODUCT_KEY " isNullable="true"/>
+        <entry name="TOTAL_VALUE" type="Integer" expression="Var.VALUE" isNullable="true"/>
+      </metadataTableEntries>
+    </table>
+  </mapperTable>
+  <mapperTable type="var">
+    <table name="Var" isMinimized="false" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false" activateColumnNameFilter="false" columnNameFilter="null">
+      <metadataTableEntries>
+        <entry name="VALUE" type="int" expression="row1.SALES_QTY * row1.PRICE" isNullable="false"/>
+      </metadataTableEntries>
+    </table>
+  </mapperTable>
+</externalNode>
