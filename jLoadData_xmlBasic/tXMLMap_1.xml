@@ -1,0 +1,86 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<externalNode i18n.job.component.parameters="Component Parameters:" i18n.job.properties="Properties" i18n.job.values="Values" i18n.mapper.table.for="Mapper table for " i18n.mapper.table.properties="Mapper table Properties" i18n.job.name="Name" i18n.tmap.matching.mode="Matching-mode" i18n.mapper.table.isminimized="isMinimized" i18n.tmap.isreject="isReject" i18n.tmap.isrejectinnnerjoin="isRejectInnerJoin" i18n.tmap.isinnerjoin="isInnerJoin" i18n.tmap.expressionfilter="expressionFilter" i18n.mapper.table.metadata.entries="Metadata Table Entries" i18n.job.type="Type" i18n.mapper.table.expression="Expression" i18n.tmap.isnullable="isNullable" i18n.tmap.constraint.entries="Constraint Table Entries" name="tXMLMap_1">
+  <parameters>
+    <column name="tStatCatcher Statistics">false</column>
+    <column name="Keep order for document">false</column>
+    <column name="Show Information">false</column>
+    <column name="Comment"><![CDATA[]]></column>
+    <column name="Use an existing validation rule">false</column>
+  </parameters>
+  <mapperTable type="input">
+    <table name="row6" matching-mode="ALL_ROWS" lookup-mode="LOAD_ONCE" isMinimized="false" isInnerJoin="false" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false" isReject="false" isRejectInnerJoin="false">
+      <metadataTableEntries>
+        <entry name="row6/
+CUST_ID" expression="" isNullable="true" type="Integer"/>
+        <entry name="row6/
+CUST_NAME" expression="" isNullable="true" type="String"/>
+        <entry name="row6/
+PHONE" expression="" isNullable="true" type="String"/>
+        <entry name="row6/
+STATE" expression="" isNullable="true" type="String"/>
+        <entry name="row6/
+PIN" expression="" isNullable="true" type="Integer"/>
+      </metadataTableEntries>
+    </table>
+    <table name="row7" matching-mode="FIRST_MATCH" lookup-mode="LOAD_ONCE" isMinimized="false" isInnerJoin="true" isPersistent="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="true" isReject="false" isRejectInnerJoin="false">
+      <metadataTableEntries>
+        <entry name="row7/
+CUST_ID" expression="row6.CUST_ID" isNullable="true" type="Integer"/>
+        <entry name="row7/
+CUST_NAME" expression="" isNullable="true" type="String"/>
+        <entry name="row7/
+CUST_CITY" expression="" isNullable="true" type="String"/>
+        <entry name="row7/
+SALES_QTY" expression="" isNullable="true" type="Integer"/>
+        <entry name="row7/
+PRICE" expression="" isNullable="true" type="Integer"/>
+      </metadataTableEntries>
+    </table>
+  </mapperTable>
+  <mapperTable type="output">
+    <table name="OUT" isMinimized="false" isReject="false" isRejectInnerJoin="false" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="false" isInnerJoin="false" isPersistent="false">
+      <metadataTableEntries>
+        <entry name="OUT/
+CUST_ID" expression="row6.CUST_ID" isNullable="true" type="Integer"/>
+        <entry name="OUT/
+CUST_NAME" expression="row6.CUST_NAME" isNullable="true" type="String"/>
+        <entry name="OUT/
+PHONE" expression="row6.PHONE" isNullable="true" type="String"/>
+        <entry name="OUT/
+STATE" expression="row6.STATE" isNullable="true" type="String"/>
+        <entry name="OUT/
+PIN" expression="row6.PIN" isNullable="true" type="Integer"/>
+        <entry name="OUT/
+CUST_CITY" expression="row7.CUST_CITY" isNullable="true" type="String"/>
+        <entry name="OUT/
+SALES_QTY" expression="row7.SALES_QTY" isNullable="true" type="Integer"/>
+        <entry name="OUT/
+PRICE" expression="row7.PRICE" isNullable="true" type="Integer"/>
+      </metadataTableEntries>
+    </table>
+    <table name="Rejects" isMinimized="false" isReject="false" isRejectInnerJoin="true" expressionFilter="null" activateExpressionFilter="false" activateCondensedTool="true" isInnerJoin="false" isPersistent="false">
+      <metadataTableEntries>
+        <entry name="Rejects/
+CUST_ID" expression="row6.CUST_ID" isNullable="true" type="Integer"/>
+        <entry name="Rejects/
+CUST_NAME" expression="row6.CUST_NAME" isNullable="true" type="String"/>
+        <entry name="Rejects/
+PHONE" expression="row6.PHONE" isNullable="true" type="String"/>
+        <entry name="Rejects/
+STATE" expression="row6.STATE" isNullable="true" type="String"/>
+        <entry name="Rejects/
+PIN" expression="row6.PIN" isNullable="true" type="Integer"/>
+        <entry name="Rejects/
+CUST_CITY" expression="row7.CUST_CITY" isNullable="true" type="String"/>
+        <entry name="Rejects/
+SALES_QTY" expression="row7.SALES_QTY" isNullable="true" type="Integer"/>
+        <entry name="Rejects/
+PRICE" expression="row7.PRICE" isNullable="true" type="Integer"/>
+      </metadataTableEntries>
+    </table>
+  </mapperTable>
+  <mapperTable type="var">
+    <table name="Var" isMinimized="true" isReject="false" isRejectInnerJoin="false" isInnerJoin="false" isPersistent="false"/>
+  </mapperTable>
+</externalNode>
